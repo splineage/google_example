@@ -5,6 +5,9 @@
       <map>
         <entry key="app/src/main/res/drawable-v24/ic_launcher_background.xml" value="0.20572916666666666" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.20572916666666666" />
+        <entry key="app/src/main/res/drawable/bakery_back.xml" value="0.20989583333333334" />
+        <entry key="app/src/main/res/drawable/cupcake.xml" value="0.20989583333333334" />
+        <entry key="app/src/main/res/drawable/donut.xml" value="0.20989583333333334" />
         <entry key="app/src/main/res/drawable/ic_baseline_call_made_24.xml" value="0.20572916666666666" />
         <entry key="app/src/main/res/drawable/ic_baseline_room_service_24.xml" value="0.20572916666666666" />
         <entry key="app/src/main/res/drawable/ic_baseline_store_24.xml" value="0.20572916666666666" />
@@ -14,7 +17,9 @@
         <entry key="app/src/main/res/drawable/lemon_restart.xml" value="0.19947916666666668" />
         <entry key="app/src/main/res/drawable/lemon_squeeze.xml" value="0.19947916666666668" />
         <entry key="app/src/main/res/drawable/lemon_tree.xml" value="0.19947916666666668" />
+        <entry key="app/src/main/res/drawable/white_box.xml" value="0.20989583333333334" />
         <entry key="app/src/main/res/layout/activity_affirmations.xml" value="0.15520833333333334" />
+        <entry key="app/src/main/res/layout/activity_dessert.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_detail.xml" value="0.182370820668693" />
         <entry key="app/src/main/res/layout/activity_lemonade.xml" value="0.375" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1975314987890402" />
@@ -23,6 +28,7 @@
         <entry key="app/src/main/res/layout/activity_words.xml" value="0.182370820668693" />
         <entry key="app/src/main/res/layout/list_item.xml" value="0.182370820668693" />
         <entry key="app/src/main/res/layout/words_item.xml" value="0.182370820668693" />
+        <entry key="app/src/main/res/menu/dessert_menu.xml" value="0.20833333333333334" />
         <entry key="app/src/main/res/menu/layout_menu.xml" value="0.3675925925925926" />
       </map>
     </option>
