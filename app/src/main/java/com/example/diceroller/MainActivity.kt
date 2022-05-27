@@ -1,47 +1,26 @@
 package com.example.diceroller
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
-import com.example.diceroller.databinding.ActivityMainBinding
+import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.setupActionBarWithNavController
+import com.example.diceroller.databinding.ActivityExFragmentBinding
 
-/**
- * This activity allows the user to roll a dice and view the result
- * on the screen.
- */
-class MainActivity : AppCompatActivity() {
-    lateinit var binding: ActivityMainBinding
+class MainActivity: AppCompatActivity() {
+    private lateinit var navController: NavController
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        val binding = ActivityExFragmentBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        binding.btnRoll.setOnClickListener {
-            Toast.makeText(this, "Dice Rolled!", Toast.LENGTH_SHORT).show()
-            rollDice()
-        }
+        val navHostFragment = supportFragmentManager
+            .findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        navController = navHostFragment.navController
+        setupActionBarWithNavController(navController)
     }
 
-    private fun rollDice() {
-        val dice = Dice(6)
-        val result = dice.roll()
-        binding.textView.text = result.toString()
-        when(result){
-            1->{binding.imageView.setImageResource(R.drawable.dice_1)}
-            2->{binding.imageView.setImageResource(R.drawable.dice_2)}
-            3->{binding.imageView.setImageResource(R.drawable.dice_3)}
-            4->{binding.imageView.setImageResource(R.drawable.dice_4)}
-            5->{binding.imageView.setImageResource(R.drawable.dice_5)}
-            6->{binding.imageView.setImageResource(R.drawable.dice_6)}
-        }
-    }
-
-}
-
-class Dice(val sides: Int) {
-    /**
-     * Roll the dice and update the screen with the result.
-     */
-    fun roll(): Int {
-        return (1..sides).random()
+    override fun onSupportNavigateUp(): Boolean {
+        // 단락 평가,왼쪽이 true 인 경우, 오른쪽 실행되지 않음.
+        return navController.navigateUp() || super.onSupportNavigateUp()
     }
 }
