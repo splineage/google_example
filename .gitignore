@@ -190,3 +190,5 @@ Temporary Items
 .externalNativeBuild
 .cxx
 local.properties
+/unscramble/build
+/cupcake/build
