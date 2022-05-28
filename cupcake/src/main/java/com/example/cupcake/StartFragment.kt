@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.cupcake.databinding.FragmentStartBinding
+import com.example.cupcake.generated.callback.OnClickListener
 import com.example.cupcake.model.OrderViewModel
 
 class StartFragment: Fragment() {
@@ -23,12 +24,7 @@ class StartFragment: Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        binding?.apply {
-            orderOneCupcake.setOnClickListener { orderCupcake(1) }
-            orderSixCupcakes.setOnClickListener { orderCupcake(6) }
-            orderTwelveCupcake.setOnClickListener { orderCupcake(12) }
-        }
+        binding?.startFragment = this
     }
 
     fun orderCupcake(quantity: Int){
