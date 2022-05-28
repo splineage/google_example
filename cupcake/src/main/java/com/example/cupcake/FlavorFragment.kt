@@ -26,6 +26,7 @@ class FlavorFragment: Fragment() {
 
         binding?.apply {
             // data binding
+            lifecycleOwner = viewLifecycleOwner // 수명 주기 연결.
             viewModel = sharedViewModel
             nextButton.setOnClickListener { goToNextScreen() }
         }
