@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/mobile_navigation"
+            app:startDestination="@id/startOrderFragment">
+
+    <fragment
+            android:id="@+id/accompanimentMenuFragment"
+            android:name="com.example.lunch_tray.ui.order.AccompanimentMenuFragment"
+            android:label="fragment_accompaniment_menu"
+            tools:layout="@layout/fragment_accompaniment_menu"/>
+    <fragment
+            android:id="@+id/checkout"
+            android:name="com.example.lunch_tray.ui.order.CheckoutFragment"
+            android:label="fragment_checkout"
+            tools:layout="@layout/fragment_checkout"/>
+    <fragment
+            android:id="@+id/entreeMenuFragment"
+            android:name="com.example.lunch_tray.ui.order.EntreeMenuFragment"
+            android:label="fragment_entree_menu"
+            tools:layout="@layout/fragment_entree_menu"/>
+    <fragment
+            android:id="@+id/sideMenuFragment"
+            android:name="com.example.lunch_tray.ui.order.SideMenuFragment"
+            android:label="fragment_side_menu"
+            tools:layout="@layout/fragment_side_menu"/>
+    <fragment
+            android:id="@+id/startOrderFragment"
+            android:name="com.example.lunch_tray.ui.order.StartOrderFragment"
+            android:label="fragment_start_order"
+            tools:layout="@layout/fragment_start_order"/>
+</navigation>

@@ -44,6 +44,13 @@
         <entry key="cupcake/src/main/res/layout/fragment_pickup.xml" value="0.359375" />
         <entry key="cupcake/src/main/res/layout/fragment_start.xml" value="0.359375" />
         <entry key="cupcake/src/main/res/layout/fragment_summary.xml" value="0.375" />
+        <entry key="lunch_tray/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.20572916666666666" />
+        <entry key="lunch_tray/src/main/res/layout/activity_main.xml" value="0.1693840579710145" />
+        <entry key="lunch_tray/src/main/res/layout/fragment_accompaniment_menu.xml" value="0.18958333333333333" />
+        <entry key="lunch_tray/src/main/res/layout/fragment_checkout.xml" value="0.18958333333333333" />
+        <entry key="lunch_tray/src/main/res/layout/fragment_entree_menu.xml" value="0.18958333333333333" />
+        <entry key="lunch_tray/src/main/res/layout/fragment_side_menu.xml" value="0.18958333333333333" />
+        <entry key="lunch_tray/src/main/res/layout/fragment_start_order.xml" value="0.18958333333333333" />
         <entry key="unscramble/src/main/res/drawable/ic_error.xml" value="0.20989583333333334" />
         <entry key="unscramble/src/main/res/layout/activity_main.xml" value="0.17980072463768115" />
         <entry key="unscramble/src/main/res/layout/game_fragment.xml" value="0.1" />
