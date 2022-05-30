@@ -11,7 +11,7 @@
             android:label="fragment_accompaniment_menu"
             tools:layout="@layout/fragment_accompaniment_menu"/>
     <fragment
-            android:id="@+id/checkout"
+            android:id="@+id/checkoutFragment"
             android:name="com.example.lunch_tray.ui.order.CheckoutFragment"
             android:label="fragment_checkout"
             tools:layout="@layout/fragment_checkout"/>
