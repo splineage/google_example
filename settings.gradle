@@ -10,3 +10,4 @@ rootProject.name = "Dice Roller"
 include ':app'
 include ':unscramble'
 include ':cupcake'
+include ':adaptive_layout'
