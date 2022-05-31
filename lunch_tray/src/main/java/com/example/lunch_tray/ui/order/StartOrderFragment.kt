@@ -5,8 +5,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import com.example.lunch_tray.R
 import com.example.lunch_tray.databinding.FragmentStartOrderBinding
+import com.example.lunch_tray.model.OrderViewModel
 
 /**
  * A simple [Fragment] subclass.
@@ -20,7 +23,6 @@ class StartOrderFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
     }
 
     override fun onCreateView(
@@ -29,7 +31,7 @@ class StartOrderFragment : Fragment() {
     ): View? {
         _binding = FragmentStartOrderBinding.inflate(inflater, container, false)
         binding.startOrderBtn.setOnClickListener {
-
+            findNavController().navigate(R.id.action_startOrderFragment_to_entreeMenuFragment)
         }
         return binding.root
     }

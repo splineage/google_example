@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import com.example.lunch_tray.R
 import com.example.lunch_tray.databinding.FragmentCheckoutBinding
 import com.example.lunch_tray.model.OrderViewModel
@@ -42,15 +43,19 @@ class CheckoutFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
             lifecycleOwner = viewLifecycleOwner
+            viewModel = sharedViewModel
+            checkFragment = this@CheckoutFragment
         }
     }
 
     fun cancelOrder(){
-
+        sharedViewModel.resetOrder()
+        findNavController().navigate(R.id.action_checkoutFragment_to_startOrderFragment)
     }
 
     fun submitOrder(){
         Snackbar.make(binding.root, R.string.submit_order, Snackbar.LENGTH_SHORT).show()
+        findNavController().navigate(R.id.action_checkoutFragment_to_startOrderFragment)
     }
 
     override fun onDestroyView() {

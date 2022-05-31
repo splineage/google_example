@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import com.example.lunch_tray.R
 import com.example.lunch_tray.databinding.FragmentAccompanimentMenuBinding
 import com.example.lunch_tray.model.OrderViewModel
@@ -39,15 +40,17 @@ class AccompanimentMenuFragment : Fragment() {
         binding.apply {
             lifecycleOwner = viewLifecycleOwner
             viewModel = sharedViewModel
+            accompanimentFragment = this@AccompanimentMenuFragment
         }
     }
 
     fun goToNextScreen(){
-
+        findNavController().navigate(R.id.action_accompanimentMenuFragment_to_checkoutFragment)
     }
 
     fun cancelOrder(){
-
+        sharedViewModel.resetOrder()
+        findNavController().navigate(R.id.action_accompanimentMenuFragment_to_startOrderFragment)
     }
 
     override fun onDestroyView() {

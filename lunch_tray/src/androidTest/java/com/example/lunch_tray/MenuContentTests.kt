@@ -83,7 +83,7 @@ class MenuContentTests: BaseTest() {
         onView(withId(R.id.potato_description))
             .check(matches(withText(containsString("Marble potatoes"))))
         onView(withId(R.id.potato_price))
-            .check(matches(withText(containsString("$1.50"))))
+            .check(matches(withText(containsString("$2.00"))))
 
         // Check the rice item
         onView(withId(R.id.rice))

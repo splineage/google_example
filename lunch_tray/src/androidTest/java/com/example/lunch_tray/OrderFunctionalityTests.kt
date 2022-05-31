@@ -73,7 +73,7 @@ class OrderFunctionalityTests: BaseTest() {
         // Select the rice item
         onView(withId(R.id.rice)).perform(click())
         onView(withId(R.id.subtotal))
-            .check(matches(withText(containsString("Subtotal: 1.50"))))
+            .check(matches(withText(containsString("Subtotal: $1.50"))))
     }
 
     /**
@@ -217,7 +217,7 @@ class OrderFunctionalityTests: BaseTest() {
         onView(withId(R.id.start_order_btn)).perform(click())
 
         // Make sure subtotal is zero
-        onView(withText("Subtotal: 0.00")).check(matches(isDisplayed()))
+        onView(withText("Subtotal: $0.00")).check(matches(isDisplayed()))
     }
 
     /**
