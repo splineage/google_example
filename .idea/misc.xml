@@ -51,6 +51,13 @@
         <entry key="lunch_tray/src/main/res/layout/fragment_entree_menu.xml" value="0.375" />
         <entry key="lunch_tray/src/main/res/layout/fragment_side_menu.xml" value="0.18958333333333333" />
         <entry key="lunch_tray/src/main/res/layout/fragment_start_order.xml" value="0.18958333333333333" />
+        <entry key="marsphotos/src/main/res/drawable/ic_broken_image.xml" value="0.2046875" />
+        <entry key="marsphotos/src/main/res/drawable/ic_connection_error.xml" value="0.2046875" />
+        <entry key="marsphotos/src/main/res/drawable/loading_animation.xml" value="0.2046875" />
+        <entry key="marsphotos/src/main/res/drawable/loading_img.xml" value="0.2046875" />
+        <entry key="marsphotos/src/main/res/layout/activity_main.xml" value="0.18958333333333333" />
+        <entry key="marsphotos/src/main/res/layout/fragment_overview.xml" value="0.18854166666666666" />
+        <entry key="marsphotos/src/main/res/layout/grid_view_item.xml" value="0.18854166666666666" />
         <entry key="unscramble/src/main/res/drawable/ic_error.xml" value="0.20989583333333334" />
         <entry key="unscramble/src/main/res/layout/activity_main.xml" value="0.17980072463768115" />
         <entry key="unscramble/src/main/res/layout/game_fragment.xml" value="0.1" />
