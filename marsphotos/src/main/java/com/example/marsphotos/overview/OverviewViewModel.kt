@@ -9,10 +9,13 @@ import com.example.marsphotos.network.MarsPhoto
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
+enum class MarsApiStatus{
+    LOADING, ERROR, DONE
+}
 class OverviewViewModel: ViewModel() {
 
-    private val _status = MutableLiveData<String>()
-    val status: LiveData<String> get() = _status
+    private val _status = MutableLiveData<MarsApiStatus>()
+    val status: LiveData<MarsApiStatus> get() = _status
 
     private val _photos = MutableLiveData<List<MarsPhoto>>()
     val photos: LiveData<List<MarsPhoto>> get() = _photos
@@ -23,14 +26,15 @@ class OverviewViewModel: ViewModel() {
 
     private fun getMarsPhotos(){
         viewModelScope.launch(Dispatchers.IO) {
+            _status.postValue(MarsApiStatus.LOADING)
             try {
                 _photos.postValue(MarsApi.retrofitService.getPhotos())
-                _status.postValue("Success: Mars properties retrieved")
+                _status.postValue(MarsApiStatus.DONE)
             }catch (e: Exception){
-                _status.postValue("Failure: ${e.message}")
+                _status.postValue(MarsApiStatus.ERROR)
+                _photos.postValue(listOf())
             }
 
         }
-        _status.value = "Set the Mars API status response here!"
     }
 }
