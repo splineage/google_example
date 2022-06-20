@@ -46,6 +46,10 @@
         <entry key="app/src/main/res/layout/words_item.xml" value="0.182370820668693" />
         <entry key="app/src/main/res/menu/dessert_menu.xml" value="0.20833333333333334" />
         <entry key="app/src/main/res/menu/layout_menu.xml" value="0.3675925925925926" />
+        <entry key="bus-schedule/src/main/res/layout/activity_main.xml" value="0.335" />
+        <entry key="bus-schedule/src/main/res/layout/bus_stop_item.xml" value="0.178125" />
+        <entry key="bus-schedule/src/main/res/layout/fragment_full_schedule.xml" value="0.25" />
+        <entry key="bus-schedule/src/main/res/layout/fragment_stop_schedule.xml" value="0.17916666666666667" />
         <entry key="cupcake/src/main/res/drawable/cupcake.xml" value="0.37552083333333336" />
         <entry key="cupcake/src/main/res/layout/activity_main.xml" value="0.36041666666666666" />
         <entry key="cupcake/src/main/res/layout/fragment_flavor.xml" value="0.359375" />
