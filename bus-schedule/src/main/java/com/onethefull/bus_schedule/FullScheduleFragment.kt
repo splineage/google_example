@@ -53,6 +53,8 @@ class FullScheduleFragment : Fragment() {
             view.findNavController().navigate(action)
         }
         recyclerView.adapter = busStopAdapter
+        // Using GlobalScope is not best practice, and in the next
+        // stop we'll see how to improve this.
         GlobalScope.launch(Dispatchers.IO) {
             busStopAdapter.submitList(viewModel.fullSchedule())
         }
