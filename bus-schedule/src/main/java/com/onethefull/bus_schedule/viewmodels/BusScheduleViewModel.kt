@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.onethefull.bus_schedule.database.Schedule
 import com.onethefull.bus_schedule.database.ScheduleDao
+import kotlinx.coroutines.flow.Flow
 
 /**
  * viewModel 클래스는 수명 주기를 인식해야 하므로 수명 주기 이벤트에 응답할 수 있는 객체로 인스턴스 해야함.
@@ -11,9 +12,9 @@ import com.onethefull.bus_schedule.database.ScheduleDao
  * 처리해야 함. 대신 뷰 모델 객체를 인스턴스화하는 팩토리라는 클래스를 만들 수 있음.
  */
 class BusScheduleViewModel(private val scheduleDao: ScheduleDao): ViewModel() {
-    fun fullSchedule(): List<Schedule> = scheduleDao.getAll()
+    fun fullSchedule(): Flow<List<Schedule>> = scheduleDao.getAll()
 
-    fun scheduleForStopName(name: String): List<Schedule> = scheduleDao.getByStopName(name)
+    fun scheduleForStopName(name: String): Flow<List<Schedule>> = scheduleDao.getByStopName(name)
 }
 
 /**

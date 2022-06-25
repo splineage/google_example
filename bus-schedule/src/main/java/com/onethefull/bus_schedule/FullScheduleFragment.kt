@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.coroutineScope
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -14,6 +16,7 @@ import com.onethefull.bus_schedule.viewmodels.BusScheduleViewModel
 import com.onethefull.bus_schedule.viewmodels.BusScheduleViewModelFactory
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 
@@ -55,8 +58,13 @@ class FullScheduleFragment : Fragment() {
         recyclerView.adapter = busStopAdapter
         // Using GlobalScope is not best practice, and in the next
         // stop we'll see how to improve this.
-        GlobalScope.launch(Dispatchers.IO) {
-            busStopAdapter.submitList(viewModel.fullSchedule())
+//        GlobalScope.launch(Dispatchers.IO) {
+//            busStopAdapter.submitList(viewModel.fullSchedule())
+//        }
+        lifecycle.coroutineScope.launch {
+            viewModel.fullSchedule().collect(){
+                busStopAdapter.submitList(it)
+            }
         }
     }
 
