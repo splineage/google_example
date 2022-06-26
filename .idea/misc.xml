@@ -58,6 +58,7 @@
         <entry key="cupcake/src/main/res/layout/fragment_summary.xml" value="0.375" />
         <entry key="inentory_app/src/main/res/drawable/ic_edit.xml" value="0.19947916666666668" />
         <entry key="inentory_app/src/main/res/layout/activity_main.xml" value="0.184375" />
+        <entry key="inentory_app/src/main/res/layout/fragment_add_item.xml" value="0.335" />
         <entry key="inentory_app/src/main/res/layout/fragment_item_detail.xml" value="0.335" />
         <entry key="inentory_app/src/main/res/layout/fragment_item_list.xml" value="0.184375" />
         <entry key="inentory_app/src/main/res/layout/item_list_item.xml" value="0.18333333333333332" />
