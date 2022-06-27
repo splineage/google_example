@@ -63,6 +63,8 @@ class ItemDetailFragment : Fragment() {
         binding.itemCount.text = item.quantityInStock.toString()
         binding.sellItem.isEnabled = viewModel.isStockAvailable(item)
         binding.sellItem.setOnClickListener { viewModel.sellItem(item) }
+        binding.deleteItem.setOnClickListener { showConfirmationDialog() }
+        binding.editItem.setOnClickListener { editItem() }
     }
 
     override fun onDestroyView() {
@@ -90,8 +92,18 @@ class ItemDetailFragment : Fragment() {
      * Delete the current item and navigates to the list fragment.
      */
     private fun deleteItem(){
+        viewModel.deleteItem(item)
         findNavController().navigateUp()
     }
+
+    private fun editItem(){
+        val action = ItemDetailFragmentDirections.actionItemDetailFragmentToAddItemFragment(
+            getString(R.string.edit_fragment_title),
+            item.id
+        )
+        this.findNavController().navigate(action)
+    }
+
     companion object {
 
     }
