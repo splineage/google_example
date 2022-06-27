@@ -61,6 +61,8 @@ class ItemDetailFragment : Fragment() {
         binding.itemName.text = item.itemName
         binding.itemPrice.text = item.getFormattedPrice()
         binding.itemCount.text = item.quantityInStock.toString()
+        binding.sellItem.isEnabled = viewModel.isStockAvailable(item)
+        binding.sellItem.setOnClickListener { viewModel.sellItem(item) }
     }
 
     override fun onDestroyView() {
