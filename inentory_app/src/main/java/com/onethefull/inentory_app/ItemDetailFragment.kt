@@ -5,9 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.onethefull.inentory_app.data.Item
+import com.onethefull.inentory_app.data.getFormattedPrice
 import com.onethefull.inentory_app.databinding.FragmentItemDetailBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -24,6 +27,13 @@ class ItemDetailFragment : Fragment() {
     private val navigationArgs: ItemDetailFragmentArgs by navArgs()
     private var _binding: FragmentItemDetailBinding? = null
     private val binding get() = _binding!!
+    lateinit var item: Item
+
+    private val viewModel: InventoryViewModel by activityViewModels{
+        InventoryViewModelFactory(
+            (activity?.application as InventoryApplication).database.itemDao()
+        )
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,6 +46,21 @@ class ItemDetailFragment : Fragment() {
         // Inflate the layout for this fragment
         _binding = FragmentItemDetailBinding.inflate(inflater, container, false)
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val id = navigationArgs.itemId
+        viewModel.retrieveItem(id).observe(this.viewLifecycleOwner){ selectedItem ->
+            item = selectedItem
+            bind(item)
+        }
+    }
+
+    private fun bind(item: Item){
+        binding.itemName.text = item.itemName
+        binding.itemPrice.text = item.getFormattedPrice()
+        binding.itemCount.text = item.quantityInStock.toString()
     }
 
     override fun onDestroyView() {
