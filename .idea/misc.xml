@@ -76,6 +76,10 @@
         <entry key="marsphotos/src/main/res/layout/activity_main.xml" value="0.18958333333333333" />
         <entry key="marsphotos/src/main/res/layout/fragment_overview.xml" value="0.18854166666666666" />
         <entry key="marsphotos/src/main/res/layout/grid_view_item.xml" value="0.18854166666666666" />
+        <entry key="repository_pattern/src/main/res/drawable/ic_play_circle_outline_black_48dp.xml" value="0.1975" />
+        <entry key="repository_pattern/src/main/res/layout/activity_dev_byte_viewer.xml" value="0.18958333333333333" />
+        <entry key="repository_pattern/src/main/res/layout/fragment_dev_byte.xml" value="0.18958333333333333" />
+        <entry key="repository_pattern/src/main/res/layout/item_devbyte.xml" value="0.375" />
         <entry key="sql_basics/src/main/res/layout/activity_main.xml" value="0.1984375" />
         <entry key="unscramble/src/main/res/drawable/ic_error.xml" value="0.20989583333333334" />
         <entry key="unscramble/src/main/res/layout/activity_main.xml" value="0.17980072463768115" />
