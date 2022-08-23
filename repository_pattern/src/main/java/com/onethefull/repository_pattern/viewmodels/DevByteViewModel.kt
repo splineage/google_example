@@ -28,7 +28,7 @@ class DevByteViewModel(application: Application): AndroidViewModel(application) 
 
     private val videosRepository = VideosRepository(getDatabase(application))
 
-    val playlist = videosRepository.videos
+    val playlist = videosRepository.videos // LiveData
 
     /**
      * init{} is called immediately when this ViewModel is created.

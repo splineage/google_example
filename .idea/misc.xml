@@ -13,9 +13,13 @@
         <entry key="amphibians/src/main/res/drawable/loading_animation.xml" value="0.2046875" />
         <entry key="amphibians/src/main/res/drawable/loading_img.xml" value="0.2046875" />
         <entry key="amphibians/src/main/res/layout/activity_main.xml" value="0.33" />
-        <entry key="amphibians/src/main/res/layout/fragment_amphibian_detail.xml" value="0.18958333333333333" />
-        <entry key="amphibians/src/main/res/layout/fragment_amphibian_list.xml" value="0.18958333333333333" />
+        <entry key="amphibians/src/main/res/layout/fragment_amphibian_detail.xml" value="0.1" />
+        <entry key="amphibians/src/main/res/layout/fragment_amphibian_list.xml" value="0.1" />
         <entry key="amphibians/src/main/res/layout/list_view_item.xml" value="0.18854166666666666" />
+        <entry key="android_hilt/src/main/res/layout/activity_main.xml" value="0.37604166666666666" />
+        <entry key="android_hilt/src/main/res/layout/fragment_buttons.xml" value="0.375" />
+        <entry key="android_hilt/src/main/res/layout/fragment_logs.xml" value="0.375" />
+        <entry key="android_hilt/src/main/res/layout/text_row_item.xml" value="0.375" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_background.xml" value="0.20572916666666666" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.20572916666666666" />
         <entry key="app/src/main/res/drawable/bakery_back.xml" value="0.20989583333333334" />
@@ -77,6 +81,7 @@
         <entry key="marsphotos/src/main/res/layout/fragment_overview.xml" value="0.18854166666666666" />
         <entry key="marsphotos/src/main/res/layout/grid_view_item.xml" value="0.18854166666666666" />
         <entry key="repository_pattern/src/main/res/drawable/ic_play_circle_outline_black_48dp.xml" value="0.1975" />
+        <entry key="repository_pattern/src/main/res/layout/activity_dev_byte.xml" value="0.37604166666666666" />
         <entry key="repository_pattern/src/main/res/layout/activity_dev_byte_viewer.xml" value="0.18958333333333333" />
         <entry key="repository_pattern/src/main/res/layout/fragment_dev_byte.xml" value="0.18958333333333333" />
         <entry key="repository_pattern/src/main/res/layout/item_devbyte.xml" value="0.375" />
