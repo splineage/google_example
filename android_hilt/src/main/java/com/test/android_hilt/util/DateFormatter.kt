@@ -1,7 +1,6 @@
 package com.test.android_hilt.util
 
 import android.annotation.SuppressLint
-import dagger.hilt.android.scopes.ActivityScoped
 import java.text.SimpleDateFormat
 import java.util.*
 import javax.inject.Inject
