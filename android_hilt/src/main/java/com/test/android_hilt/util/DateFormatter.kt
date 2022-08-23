@@ -1,8 +1,11 @@
 package com.test.android_hilt.util
 
 import android.annotation.SuppressLint
+import dagger.hilt.android.scopes.ActivityScoped
 import java.text.SimpleDateFormat
 import java.util.*
+import javax.inject.Inject
+import javax.inject.Singleton
 
 /**
  * @author jskim
@@ -10,7 +13,9 @@ import java.util.*
  * @created 2022/08/23 10:33 오전
  * @desc
  */
-class DateFormatter {
+
+@ActivityScoped
+class DateFormatter @Inject constructor(){
     @SuppressLint("SimpleDateFormat")
     private val formatter = SimpleDateFormat("d MMM yyyy HH:mm:ss")
 

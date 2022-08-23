@@ -9,9 +9,13 @@ import android.widget.Button
 import androidx.fragment.app.Fragment
 import com.test.android_hilt.LogApplication
 import com.test.android_hilt.R
+import com.test.android_hilt.data.LoggerDataSource
 import com.test.android_hilt.data.LoggerLocalDataSource
+import com.test.android_hilt.di.InMemoryLogger
 import com.test.android_hilt.navigator.AppNavigator
 import com.test.android_hilt.navigator.Screens
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 /**
  * @author jskim
@@ -19,9 +23,14 @@ import com.test.android_hilt.navigator.Screens
  * @created 2022/08/23 10:54 오전
  * @desc
  */
+@AndroidEntryPoint
 class ButtonsFragment: Fragment() {
-    private lateinit var logger: LoggerLocalDataSource
-    private lateinit var navigator: AppNavigator
+    @InMemoryLogger
+    @Inject
+    lateinit var logger: LoggerDataSource
+
+    @Inject
+    lateinit var navigator: AppNavigator
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -33,16 +42,18 @@ class ButtonsFragment: Fragment() {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        populateFields(context)
+//      Hilt 대체
+//        populateFields(context)
     }
 
-    private fun populateFields(context: Context){
-        logger = (context.applicationContext as LogApplication)
-            .serviceLocator.loggerLocalDataSource
-
-        navigator = (context.applicationContext as LogApplication)
-            .serviceLocator.provideNavigator(requireActivity())
-    }
+//      Hilt 대체
+//    private fun populateFields(context: Context){
+//        logger = (context.applicationContext as LogApplication)
+//            .serviceLocator.loggerLocalDataSource
+//
+//        navigator = (context.applicationContext as LogApplication)
+//            .serviceLocator.provideNavigator(requireActivity())
+//    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         view.findViewById<Button>(R.id.button1).setOnClickListener {
@@ -50,7 +61,7 @@ class ButtonsFragment: Fragment() {
         }
 
         view.findViewById<Button>(R.id.button2).setOnClickListener {
-            logger.addLog("Interaction with 'Button 3'")
+            logger.addLog("Interaction with 'Button 2'")
         }
 
         view.findViewById<Button>(R.id.button3).setOnClickListener {

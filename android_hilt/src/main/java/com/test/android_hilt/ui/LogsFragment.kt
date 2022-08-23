@@ -11,8 +11,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.test.android_hilt.LogApplication
 import com.test.android_hilt.R
 import com.test.android_hilt.data.Log
+import com.test.android_hilt.data.LoggerDataSource
 import com.test.android_hilt.data.LoggerLocalDataSource
+import com.test.android_hilt.di.InMemoryLogger
 import com.test.android_hilt.util.DateFormatter
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 /**
  * @author jskim
@@ -20,9 +24,16 @@ import com.test.android_hilt.util.DateFormatter
  * @created 2022/08/23 10:53 오전
  * @desc
  */
+@AndroidEntryPoint
 class LogsFragment: Fragment() {
-    private lateinit var logger: LoggerLocalDataSource
-    private lateinit var dateFormatter: DateFormatter
+
+    @InMemoryLogger
+    @Inject
+    lateinit var logger: LoggerDataSource
+
+    @Inject
+    lateinit var dateFormatter: DateFormatter
+
     private lateinit var recyclerView: RecyclerView
 
     override fun onCreateView(
@@ -45,8 +56,8 @@ class LogsFragment: Fragment() {
     }
 
     private fun populateFields(context: Context){
-        logger = (context.applicationContext as LogApplication).serviceLocator.loggerLocalDataSource
-        dateFormatter = (context.applicationContext as LogApplication).serviceLocator.provideDateFormatter()
+//        logger = (context.applicationContext as LogApplication).serviceLocator.loggerLocalDataSource
+//        dateFormatter = (context.applicationContext as LogApplication).serviceLocator.provideDateFormatter()
     }
 
     override fun onResume() {
