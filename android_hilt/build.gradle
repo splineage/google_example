@@ -17,6 +17,7 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "com.test.android_hilt.CustomTestRunner"
         javaCompileOptions{
             annotationProcessorOptions{
                 arguments["room.incremental"] = "true" // Gradle 증분 주석 프로세서를 사용 설정합니다.
@@ -56,4 +57,11 @@ dependencies {
 
     implementation("com.google.dagger:hilt-android:$hilt_version")
     kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
+
+    // Hilt testing dependency
+    androidTestImplementation("com.google.dagger:hilt-android-testing:$hilt_version")
+    kaptAndroidTest("com.google.dagger:hilt-android-compiler:$hilt_version")
+
+    testAnnotationProcessor("com.google.dagger:hilt-android-compiler:$hilt_version")
+
 }

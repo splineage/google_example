@@ -14,7 +14,7 @@ import javax.inject.Singleton
  * @desc
  */
 
-@ActivityScoped
+@Singleton
 class DateFormatter @Inject constructor(){
     @SuppressLint("SimpleDateFormat")
     private val formatter = SimpleDateFormat("d MMM yyyy HH:mm:ss")
