@@ -7,6 +7,7 @@ import android.view.accessibility.AccessibilityNodeInfo
 import android.widget.Button
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.onethefull.data_store.data.SettingsDataStore
 
 /**
  * @author jskim

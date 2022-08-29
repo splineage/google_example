@@ -4,10 +4,14 @@ import android.os.Bundle
 import android.view.*
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.asLiveData
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.onethefull.data_store.data.SettingsDataStore
 import com.onethefull.data_store.databinding.FragmentLetterListBinding
+import kotlinx.coroutines.launch
 
 /**
  * @author jskim
@@ -21,6 +25,8 @@ class LetterListFragment: Fragment() {
 
     private lateinit var recyclerView: RecyclerView
     private var isLinearLayoutManager = true
+
+    private lateinit var SettingsDataStore: SettingsDataStore
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,7 +45,12 @@ class LetterListFragment: Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         recyclerView = binding.recyclerView
-        chooseLayout()
+        SettingsDataStore = SettingsDataStore(requireContext())
+        SettingsDataStore.preferenceFlow.asLiveData().observe(viewLifecycleOwner) { value ->
+            isLinearLayoutManager = value
+            chooseLayout()
+            activity?.invalidateOptionsMenu()
+        }
     }
 
     override fun onDestroyView() {
@@ -78,6 +89,10 @@ class LetterListFragment: Fragment() {
         return when(item.itemId){
             R.id.action_switch_layout->{
                 isLinearLayoutManager = !isLinearLayoutManager
+                lifecycleScope.launch { SettingsDataStore.saveLayoutToPreferencesStore(
+                    isLinearLayoutManager,
+                    requireContext()
+                ) }
                 chooseLayout()
                 setIcon(item)
                 return true
