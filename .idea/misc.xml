@@ -60,6 +60,13 @@
         <entry key="cupcake/src/main/res/layout/fragment_pickup.xml" value="0.359375" />
         <entry key="cupcake/src/main/res/layout/fragment_start.xml" value="0.359375" />
         <entry key="cupcake/src/main/res/layout/fragment_summary.xml" value="0.375" />
+        <entry key="data_store/src/main/res/drawable/ic_grid_layout.xml" value="0.1965" />
+        <entry key="data_store/src/main/res/drawable/ic_linear_layout.xml" value="0.1965" />
+        <entry key="data_store/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="data_store/src/main/res/layout/fragment_letter_list.xml" value="0.18854166666666666" />
+        <entry key="data_store/src/main/res/layout/fragment_word_list.xml" value="0.18854166666666666" />
+        <entry key="data_store/src/main/res/layout/item_view.xml" value="0.18854166666666666" />
+        <entry key="data_store/src/main/res/menu/layout_menu.xml" value="0.18854166666666666" />
         <entry key="inentory_app/src/main/res/drawable/ic_edit.xml" value="0.19947916666666668" />
         <entry key="inentory_app/src/main/res/layout/activity_main.xml" value="0.184375" />
         <entry key="inentory_app/src/main/res/layout/fragment_add_item.xml" value="0.335" />
