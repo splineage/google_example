@@ -67,6 +67,18 @@
         <entry key="data_store/src/main/res/layout/fragment_word_list.xml" value="0.18854166666666666" />
         <entry key="data_store/src/main/res/layout/item_view.xml" value="0.18854166666666666" />
         <entry key="data_store/src/main/res/menu/layout_menu.xml" value="0.18854166666666666" />
+        <entry key="forage/src/main/res/drawable/ic_add_24.xml" value="0.1965" />
+        <entry key="forage/src/main/res/drawable/ic_calendar_24.xml" value="0.1965" />
+        <entry key="forage/src/main/res/drawable/ic_edit_24.xml" value="0.1965" />
+        <entry key="forage/src/main/res/drawable/ic_location_24.xml" value="0.1965" />
+        <entry key="forage/src/main/res/drawable/ic_notes_24.xml" value="0.1965" />
+        <entry key="forage/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="forage/src/main/res/layout/content_main.xml" value="0.18854166666666666" />
+        <entry key="forage/src/main/res/layout/fragment_add_forageable.xml" value="0.18854166666666666" />
+        <entry key="forage/src/main/res/layout/fragment_forageable_detail.xml" value="0.18854166666666666" />
+        <entry key="forage/src/main/res/layout/fragment_forageable_list.xml" value="0.18958333333333333" />
+        <entry key="forage/src/main/res/layout/list_item_forageable.xml" value="0.33" />
+        <entry key="forage/src/main/res/menu/menu_main.xml" value="0.18958333333333333" />
         <entry key="inentory_app/src/main/res/drawable/ic_edit.xml" value="0.19947916666666668" />
         <entry key="inentory_app/src/main/res/layout/activity_main.xml" value="0.184375" />
         <entry key="inentory_app/src/main/res/layout/fragment_add_item.xml" value="0.335" />
