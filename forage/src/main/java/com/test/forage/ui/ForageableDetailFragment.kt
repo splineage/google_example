@@ -40,7 +40,6 @@ class ForageableDetailFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val id = navigationArgs.id
-
     }
 
     private fun bindForageable(){

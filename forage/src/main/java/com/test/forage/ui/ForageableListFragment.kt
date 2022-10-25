@@ -7,11 +7,13 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import com.test.forage.BaseApplication
 import com.test.forage.R
 import com.test.forage.databinding.FragmentForageableListBinding
 import com.test.forage.model.Forageable
 import com.test.forage.ui.adapter.ForageableListAdapter
 import com.test.forage.ui.viewmodel.ForageableViewModel
+import com.test.forage.ui.viewmodel.ForageableViewModelFactory
 
 /**
  * @author jskim
@@ -20,7 +22,11 @@ import com.test.forage.ui.viewmodel.ForageableViewModel
  * @desc
  */
 class ForageableListFragment: Fragment() {
-    private val viewModel: ForageableViewModel by activityViewModels()
+    private val viewModel: ForageableViewModel by activityViewModels{
+        ForageableViewModelFactory(
+            (activity?.application as BaseApplication).database.getDao()
+        )
+    }
     private var _binding: FragmentForageableListBinding? = null
     private val binding get() = _binding!!
 

@@ -1,6 +1,8 @@
 package com.test.forage.data
 
-import androidx.room.Dao
+import androidx.room.*
+import com.test.forage.model.Forageable
+import kotlinx.coroutines.flow.Flow
 
 /**
  * @author jskim
@@ -10,5 +12,14 @@ import androidx.room.Dao
  */
 @Dao
 interface ForageableDao {
-
+    @Query("SELECT * from forageable_database")
+    fun getForageables(): Flow<Forageable>
+    @Query("SELECT * from forageable_database WHERE id = :id")
+    fun getForageable(id: Long): Flow<Forageable>
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    fun insert(forageable: Forageable)
+    @Update
+    fun update(forageable: Forageable)
+    @Delete
+    fun delete(forageable: Forageable)
 }

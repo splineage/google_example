@@ -1,6 +1,7 @@
 package com.test.forage
 
 import android.app.Application
+import com.test.forage.data.AppDatabase
 
 /**
  * @author jskim
@@ -9,5 +10,5 @@ import android.app.Application
  * @desc
  */
 class BaseApplication: Application() {
-
+    val database: AppDatabase by lazy { AppDatabase.getDatabase(this) }
 }
