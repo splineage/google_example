@@ -86,24 +86,28 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setUI() {
-        binding.textAction.text = lemonadeState
         var resource = 0
+        var textResource = ""
         when (lemonadeState) {
             SELECT -> {
                 resource = R.drawable.lemon_tree
+                textResource = getString(R.string.lemon_select)
             }
             SQUEEZE -> {
-                binding.textAction.text = "$lemonadeState $lemonSize"
                 resource = R.drawable.lemon_squeeze
+                textResource = getString(R.string.lemon_squeeze)
             }
             DRINK -> {
                 resource = R.drawable.lemon_drink
+                textResource = getString(R.string.lemon_drink)
             }
             RESTART -> {
                 resource = R.drawable.lemon_restart
+                textResource = getString(R.string.lemon_empty_glass)
             }
         }
         binding.imageLemonState.setImageResource(resource)
+        binding.textAction.text = textResource
     }
 
     private fun showSnackbar(): Boolean {
