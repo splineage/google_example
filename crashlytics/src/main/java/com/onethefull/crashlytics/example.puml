@@ -1,0 +1,14 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+Alice -> Bob: 인증 전달
+Bob --> Alice: Authentication Response
+Bob -> DB: 데이터 전달
+DB --> Bob: 응답
+Bob --> Alice: 응답
+Alice -> Bob: Another authentication Request
+Alice <-- Bob: another authentication Response
+
+@enduml
+
