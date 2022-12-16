@@ -1,14 +1,17 @@
 package com.onethefull.kotlin_coroutines.ui
 
 import android.os.Bundle
+import android.util.Log
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.*
 import com.google.android.material.snackbar.Snackbar
 import com.onethefull.kotlin_coroutines.*
 import com.onethefull.kotlin_coroutines.databinding.FragmentPlantListBinding
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.launch
 
 /**
  * @author jskim
@@ -17,7 +20,8 @@ import com.onethefull.kotlin_coroutines.databinding.FragmentPlantListBinding
  * @desc
  */
 class PlantListFragment: Fragment() {
-    private val viewModel: PlantListViewModel by viewModels{
+    private val viewModel: PlantListViewModel by viewModels()
+    {
         Injector.providePlantListViewModelFactory(requireContext())
     }
 
@@ -39,9 +43,20 @@ class PlantListFragment: Fragment() {
             }
         }
 
+        Log.d("PlantListFragment", "observe")
+        repeatOnStarted {
+            viewModel.testFlow.collect{
+                Log.d("PlantListFragment","observed")
+                it.forEach { i ->
+                    Log.d("PlantListFragment","$i")
+                }
+            }
+        }
+
         val adapter = PlantAdapter()
         binding.plantList.adapter = adapter
 
+        viewModel.test()
         return binding.root
     }
 
@@ -86,4 +101,10 @@ class PlantListViewModelFactory(
 ): ViewModelProvider.NewInstanceFactory(){
     @Suppress("UNCHECKED_CAST")
     override fun <T: ViewModel> create(modelClass: Class<T>) = PlantListViewModel(repository) as T
+}
+
+fun LifecycleOwner.repeatOnStarted(block: suspend CoroutineScope.() -> Unit){
+    lifecycleScope.launch{
+        lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED, block)
+    }
 }
