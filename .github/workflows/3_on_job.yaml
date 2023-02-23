@@ -29,4 +29,4 @@ jobs:
 		- name: Build with Gradle
 			run: ./gradlew build
 		- name: Print Hello World
-			run: echo "3_*"
+			run: echo "3_* Hello World"
