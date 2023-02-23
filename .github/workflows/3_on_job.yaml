@@ -2,13 +2,10 @@ name: 3_on_job
 
 on:
 	push:
-		branches:
-			- '3_*'
-			- 'master'
+		branches: [ "3_*" ]
 
 	pull_request:
-		branches:
-			- 'master'
+		branches: [ "main" ]
 
 jobs:
 	build:
