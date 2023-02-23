@@ -10,7 +10,7 @@ import androidx.room.RoomDatabase
  * @created 2022/08/29 3:46 오후
  * @desc
  */
-@Database(entities = arrayOf(ForageDatabase::class), version = 1)
+@Database(entities = [ForageDatabase::class], version = 1)
 data class ForageDatabase(
     val id: Long = 0,
     val name: String,

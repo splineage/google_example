@@ -2,12 +2,13 @@ package com.example.sql_basics
 
 import androidx.room.Dao
 import androidx.room.Insert
+import androidx.room.OnConflictStrategy
 import androidx.room.Query
 
 @Dao
 interface CaliforniaParkDao {
-    @Insert
-    suspend fun insertAll(parks: List<CaliforniaPark>)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insertAll(parks: List<CaliforniaPark>)
     @Query("SELECT * FROM park")
-    suspend fun getAll(): List<CaliforniaPark>
+    fun getAll(): List<CaliforniaPark>
 }
