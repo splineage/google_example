@@ -4,11 +4,11 @@ on:
 	push:
 		branches:
 			- '3_*'
-			- 'master'
+			- 'main'
 
 	pull_request:
 		branches:
-			- 'master'
+			- 'main'
 
 jobs:
 	build:
