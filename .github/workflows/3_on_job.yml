@@ -4,6 +4,7 @@ on:
 	push:
 		branches: 
 			- 3_on_job
+      - main
 
 	pull_request:
 		branches:
