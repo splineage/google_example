@@ -10,12 +10,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.diceroller.adapter.WordAdapter
 import com.example.diceroller.databinding.FragmentWordListBinding
 
-class WordListFragment: Fragment() {
+class WordListFragment : Fragment() {
     private var _binding: FragmentWordListBinding? = null
     private val binding get() = _binding!!
     private lateinit var letterId: String
 
-    companion object{
+    companion object {
         const val LETTER = "letter"
         const val SEARCH_PREFIX = "https://www.google.com/search?q="
     }
@@ -37,7 +37,7 @@ class WordListFragment: Fragment() {
         binding.recyclerView.adapter = WordAdapter(letterId, requireContext())
 //        binding.recyclerView.adapter = WordAdapter(activity?.intent?.extras?.getString(LETTER).toString(), requireContext())
         binding.recyclerView.addItemDecoration(
-            DividerItemDecoration(context, DividerItemDecoration.VERTICAL)
+            DividerItemDecoration(context, DividerItemDecoration.VERTICAL),
         )
     }
 

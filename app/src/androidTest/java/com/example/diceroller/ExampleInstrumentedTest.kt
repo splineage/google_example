@@ -7,15 +7,11 @@ import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.espresso.matcher.ViewMatchers.withText
 import androidx.test.ext.junit.rules.ActivityScenarioRule
-import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import org.hamcrest.CoreMatchers.containsString
-
+import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
-
-import org.junit.Assert.*
-import org.junit.Rule
 
 /**
  * Instrumented test, which will execute on an Android device.
@@ -33,8 +29,9 @@ class ExampleInstrumentedTest {
 
     @get:Rule()
     val activity = ActivityScenarioRule(TipActivity::class.java)
+
     @Test
-    fun calculate_20_percent_tip(){
+    fun calculate_20_percent_tip() {
         onView(withId(R.id.cost_of_service_edit_text))
             .perform(typeText("50.00"))
 

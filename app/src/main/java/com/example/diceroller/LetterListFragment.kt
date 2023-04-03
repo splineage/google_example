@@ -1,12 +1,16 @@
 package com.example.diceroller
 
 import android.os.Bundle
-import android.view.*
+import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
+import android.view.View
+import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.diceroller.adapter.LetterAdapter
 import com.example.diceroller.databinding.FragmentLetterListBinding
 
@@ -55,17 +59,20 @@ class LetterListFragment : Fragment() {
     }
 
     private fun setIcon(menuItem: MenuItem?) {
-        if (menuItem == null)
+        if (menuItem == null) {
             return
+        }
         menuItem.icon =
-            if (isLinearLayoutManager)
+            if (isLinearLayoutManager) {
                 ContextCompat.getDrawable(requireContext(), R.drawable.ic_baseline_grid_view_24)
-            else ContextCompat.getDrawable(requireContext(), R.drawable.ic_baseline_blur_linear_24)
+            } else {
+                ContextCompat.getDrawable(requireContext(), R.drawable.ic_baseline_blur_linear_24)
+            }
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when(item.itemId){
-            R.id.action_switch_layout ->{
+        return when (item.itemId) {
+            R.id.action_switch_layout -> {
                 isLinearLayoutManager = !isLinearLayoutManager
                 chooseLayout()
                 setIcon(item)

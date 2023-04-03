@@ -7,8 +7,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.diceroller.adapter.WordAdapter
 import com.example.diceroller.databinding.ActivityDetailBinding
 
-class DetailActivity: AppCompatActivity() {
-    companion object{
+class DetailActivity : AppCompatActivity() {
+    companion object {
         const val LETTER = "letter"
         const val SEARCH_PREFIX = "https://www.google.com/search?q="
     }
@@ -24,7 +24,7 @@ class DetailActivity: AppCompatActivity() {
         recyclerView.adapter = WordAdapter(letterId, this)
 
         recyclerView.addItemDecoration(
-            DividerItemDecoration(this, DividerItemDecoration.VERTICAL)
+            DividerItemDecoration(this, DividerItemDecoration.VERTICAL),
         )
         title = getString(R.string.detail_prefix) + " " + letterId
     }

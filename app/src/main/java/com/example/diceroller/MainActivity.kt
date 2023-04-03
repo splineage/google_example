@@ -7,7 +7,7 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.diceroller.databinding.ActivityExFragmentBinding
 
-class MainActivity: AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
     private lateinit var navController: NavController
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

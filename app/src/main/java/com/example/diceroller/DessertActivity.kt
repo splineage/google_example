@@ -1,5 +1,6 @@
 package com.example.diceroller
 
+import android.annotation.SuppressLint
 import android.content.ActivityNotFoundException
 import android.os.Bundle
 import android.view.Menu
@@ -11,7 +12,7 @@ import com.example.diceroller.databinding.ActivityDessertBinding
 
 const val KEY_REVENUE = "revenue_key"
 const val KEY_DESSERT_SOLE = "dessert_sold_key"
-class DessertActivity: AppCompatActivity() {
+class DessertActivity : AppCompatActivity() {
     private var revenue = 0
     private var dessertsSold = 0
 
@@ -20,7 +21,7 @@ class DessertActivity: AppCompatActivity() {
     data class Dessert(
         val imageId: Int,
         val price: Int,
-        val startProductionAmount: Int
+        val startProductionAmount: Int,
     )
 
     // Create a list of all desserts, in order of when they start being produced
@@ -37,7 +38,7 @@ class DessertActivity: AppCompatActivity() {
         Dessert(R.drawable.lollipop, 3000, 4000),
         Dessert(R.drawable.marshmallow, 4000, 8000),
         Dessert(R.drawable.nougat, 5000, 16000),
-        Dessert(R.drawable.oreo, 6000, 20000)
+        Dessert(R.drawable.oreo, 6000, 20000),
     )
 
     private var currentDessert = allDesserts[0]
@@ -46,7 +47,7 @@ class DessertActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityDessertBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        if (savedInstanceState != null){
+        if (savedInstanceState != null) {
             revenue = savedInstanceState.getInt(KEY_REVENUE, 0)
             dessertsSold = savedInstanceState.getInt(KEY_DESSERT_SOLE, 0)
             showCurrentDessert()
@@ -59,10 +60,9 @@ class DessertActivity: AppCompatActivity() {
         binding.amountSold = dessertsSold
 
         binding.dessertButton.setImageResource(currentDessert.imageId)
-
     }
 
-    private fun onDessertClicked(){
+    private fun onDessertClicked() {
         revenue += currentDessert.price
         dessertsSold++
 
@@ -72,28 +72,30 @@ class DessertActivity: AppCompatActivity() {
         showCurrentDessert()
     }
 
-    private fun showCurrentDessert(){
+    private fun showCurrentDessert() {
         var newDessert = allDesserts[0]
-        for (dessert in allDesserts){
-            if (dessertsSold >= dessert.startProductionAmount){
+        for (dessert in allDesserts) {
+            if (dessertsSold >= dessert.startProductionAmount) {
                 newDessert = dessert
+            } else {
+                break
             }
-            else break
         }
-        if (newDessert != currentDessert){
+        if (newDessert != currentDessert) {
             currentDessert = newDessert
             binding.dessertButton.setImageResource(newDessert.imageId)
         }
     }
 
-    private fun onShare(){
+    @SuppressLint("CheckResult")
+    private fun onShare() {
         val shareIntent = ShareCompat.IntentBuilder.from(this)
             .setText(getString(R.string.share_text, dessertsSold, revenue))
             .setType("text/plain")
             .intent
         try {
             startActivity(shareIntent)
-        }catch (e: ActivityNotFoundException){
+        } catch (e: ActivityNotFoundException) {
             Toast.makeText(this, getString(R.string.sharing_not_available), Toast.LENGTH_SHORT).show()
         }
     }
@@ -104,8 +106,8 @@ class DessertActivity: AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when(item.itemId){
-            R.id.shareMenuButton-> onShare()
+        when (item.itemId) {
+            R.id.shareMenuButton -> onShare()
         }
         return super.onOptionsItemSelected(item)
     }

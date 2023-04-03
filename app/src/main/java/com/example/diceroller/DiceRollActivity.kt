@@ -1,8 +1,8 @@
 package com.example.diceroller
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.diceroller.databinding.ActivityMainBinding
 
 /**
@@ -25,16 +25,15 @@ class DiceRollActivity : AppCompatActivity() {
         val dice = Dice(6)
         val result = dice.roll()
         binding.textView.text = result.toString()
-        when(result){
-            1->{binding.imageView.setImageResource(R.drawable.dice_1)}
-            2->{binding.imageView.setImageResource(R.drawable.dice_2)}
-            3->{binding.imageView.setImageResource(R.drawable.dice_3)}
-            4->{binding.imageView.setImageResource(R.drawable.dice_4)}
-            5->{binding.imageView.setImageResource(R.drawable.dice_5)}
-            6->{binding.imageView.setImageResource(R.drawable.dice_6)}
+        when (result) {
+            1 -> { binding.imageView.setImageResource(R.drawable.dice_1) }
+            2 -> { binding.imageView.setImageResource(R.drawable.dice_2) }
+            3 -> { binding.imageView.setImageResource(R.drawable.dice_3) }
+            4 -> { binding.imageView.setImageResource(R.drawable.dice_4) }
+            5 -> { binding.imageView.setImageResource(R.drawable.dice_5) }
+            6 -> { binding.imageView.setImageResource(R.drawable.dice_6) }
         }
     }
-
 }
 
 class Dice(val sides: Int) {

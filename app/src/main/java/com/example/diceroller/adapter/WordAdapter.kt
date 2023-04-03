@@ -11,13 +11,12 @@ import android.view.accessibility.AccessibilityNodeInfo
 import android.widget.Button
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
-import com.example.diceroller.DetailActivity
 import com.example.diceroller.R
 import com.example.diceroller.WordListFragment
 
 class WordAdapter(
     private val letterId: String,
-    context: Context
+    context: Context,
 ) : RecyclerView.Adapter<WordAdapter.WordViewHolder>() {
     private val filteredWords: List<String>
 
@@ -46,10 +45,9 @@ class WordAdapter(
         val context = holder.view.context
         holder.button.text = item
         holder.button.setOnClickListener {
-            val queryUrl: Uri = Uri.parse("${WordListFragment.SEARCH_PREFIX}${item}")
+            val queryUrl: Uri = Uri.parse("${WordListFragment.SEARCH_PREFIX}$item")
             val intent = Intent(Intent.ACTION_VIEW, queryUrl) // Web browser
             context.startActivity(intent)
-
         }
     }
 
@@ -57,7 +55,7 @@ class WordAdapter(
 
     // Setup custom accessbility delegate to set the text read with
     // an accessibility service
-    companion object Accessbility: View.AccessibilityDelegate(){
+    companion object Accessbility : View.AccessibilityDelegate() {
         @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
         override fun onInitializeAccessibilityNodeInfo(host: View?, info: AccessibilityNodeInfo?) {
             super.onInitializeAccessibilityNodeInfo(host, info)
@@ -69,7 +67,7 @@ class WordAdapter(
             val customClick =
                 AccessibilityNodeInfo.AccessibilityAction(
                     AccessibilityNodeInfo.ACTION_CLICK,
-                    customString
+                    customString,
                 )
             info?.addAction(customClick)
         }

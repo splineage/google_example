@@ -3,7 +3,6 @@ package com.example.diceroller
 import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Bundle
-import android.text.Editable
 import android.view.KeyEvent
 import android.view.View
 import android.view.inputmethod.InputMethodManager
@@ -56,8 +55,8 @@ class TipActivity : AppCompatActivity() {
         binding.tvTipResult.text = "${getString(R.string.tip_amount)} $formattedTip"
     }
 
-    private fun handleKeyEvent(view: View, keyCode: Int): Boolean{
-        if (keyCode == KeyEvent.KEYCODE_ENTER){
+    private fun handleKeyEvent(view: View, keyCode: Int): Boolean {
+        if (keyCode == KeyEvent.KEYCODE_ENTER) {
             val inputMethodManager =
                 getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
             inputMethodManager.hideSoftInputFromWindow(view.windowToken, 0)

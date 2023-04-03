@@ -6,7 +6,7 @@ import com.example.diceroller.adapter.ItemAdapter
 import com.example.diceroller.databinding.ActivityAffirmationsBinding
 import com.example.diceroller.model.DataSource
 
-class AffirmationsActivity: AppCompatActivity() {
+class AffirmationsActivity : AppCompatActivity() {
     private lateinit var binding: ActivityAffirmationsBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,7 +19,5 @@ class AffirmationsActivity: AppCompatActivity() {
         // Use this settings to improve performance if you know that changes
         // in content do not change the layout size of the RecyclerView
         binding.recyclerView.setHasFixedSize(true)
-
-
     }
 }

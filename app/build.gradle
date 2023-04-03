@@ -37,6 +37,7 @@ android {
             enabled true
         }
     }
+    namespace 'com.example.diceroller'
 }
 
 dependencies {

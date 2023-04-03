@@ -16,7 +16,7 @@ import com.example.diceroller.model.Affirmation
  */
 class ItemAdapter(
     private val context: Context,
-    private val dataset: List<Affirmation>
+    private val dataset: List<Affirmation>,
 ) : RecyclerView.Adapter<ItemAdapter.ItemViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {

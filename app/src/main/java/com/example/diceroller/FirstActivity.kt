@@ -32,8 +32,8 @@ class FirstActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when(item.itemId){
-            R.id.action_switch_layout->{
+        return when (item.itemId) {
+            R.id.action_switch_layout -> {
                 isLinearLayoutManager = !isLinearLayoutManager
                 chooseLayout()
                 setIcon(item)
@@ -56,8 +56,10 @@ class FirstActivity : AppCompatActivity() {
         if (menuItem == null) return
 
         menuItem.icon =
-            if (isLinearLayoutManager)
+            if (isLinearLayoutManager) {
                 ContextCompat.getDrawable(this, R.drawable.ic_baseline_grid_view_24)
-            else ContextCompat.getDrawable(this, R.drawable.ic_baseline_blur_linear_24)
+            } else {
+                ContextCompat.getDrawable(this, R.drawable.ic_baseline_blur_linear_24)
+            }
     }
 }
