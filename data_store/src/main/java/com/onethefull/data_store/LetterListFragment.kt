@@ -58,6 +58,7 @@ class LetterListFragment: Fragment() {
         _binding = null
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.layout_menu, menu)
         val layoutButton = menu.findItem(R.id.action_switch_layout)
@@ -85,6 +86,7 @@ class LetterListFragment: Fragment() {
             }
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when(item.itemId){
             R.id.action_switch_layout->{
