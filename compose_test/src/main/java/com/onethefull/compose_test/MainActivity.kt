@@ -52,3 +52,10 @@ fun MessageCard(name: String){
 fun PreviewMessageCard(){
     MessageCard(name = "World")
 }
+
+@Preview(showSystemUi = true, showBackground = true)
+@Composable
+fun PreviewTest(){
+    Text(text = "Hello World")
+    Text(text = "Hello World")
+}

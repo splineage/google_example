@@ -76,6 +76,7 @@ private fun ProfileContent(puppy: Puppy, containerHeight: Dp){
         Name(puppy = puppy)
         ProfileProperty(label = stringResource(id = R.string.sex), value = puppy.sex)
         Spacer(Modifier.height((containerHeight - 320.dp).coerceAtLeast(0.dp)))
+
     }
 }
 
@@ -127,9 +128,9 @@ fun ProfileProperty(label: String, value: String, isLink: Boolean = false){
     }
 }
 
-@Preview
+@Preview(showSystemUi = true, showBackground = true)
 @Composable
 fun ProfileScreenPreview(){
     val puppy = DataProvider.puppyList
-    ProfileScreen(puppy = puppy[0])
+    ProfileScreen(puppy = DataProvider.puppyList[0], onNavIconPressed = {} )
 }
